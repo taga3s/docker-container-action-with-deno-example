@@ -1,0 +1,15 @@
+name: just echo
+description: just echo inputs
+
+inputs:
+  greeting:
+    description: 'Greeting message'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.greeting }}
+  env:
+    SECRET_KEY: "secret_key"
